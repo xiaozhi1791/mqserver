@@ -24,14 +24,14 @@ fi
 # 交互式输入配置
 echo "==== Mosquitto MQTT 安装配置 ===="
 printf "请输入MQTT监听端口: "
-read MQTT_PORT
+read MQTT_PORT < /dev/tty
 printf "请输入MQTT用户名: "
-read MQTT_USER
+read MQTT_USER < /dev/tty
 printf "请输入MQTT密码: "
-read -s MQTT_PASS
+read -s MQTT_PASS < /dev/tty
 echo ""
 printf "是否开启WebSocket(默认端口=MQTT_PORT+100) y/n: "
-read ENABLE_WS
+read ENABLE_WS < /dev/tty
 
 # 简单校验
 if [ -z "$MQTT_PORT" ] || [ -z "$MQTT_USER" ] || [ -z "$MQTT_PASS" ];then
